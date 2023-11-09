@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="prepositionsChois">
+        <h1>Налаштування</h1>
+        <div class="inputTipePrepositionen">
+            <h1>Оберить Preposition до дієслів які ви хочити тренувати</h1>
+            <input type="checkbox" class="TipePrepositionen" id="ausTipePrepositionen" name="TipePrepositionen"  value="aus"><label for="TipePrepositionen">aus</label>
+            <input type="checkbox" class="TipePrepositionen" id="beiTipePrepositionen" name="TipePrepositionen"  value="bei"><label for="TipePrepositionen">bei</label>
+            <input type="checkbox" class="TipePrepositionen" id="mitTipePrepositionen" name="TipePrepositionen"  value="mit"><label for="TipePrepositionen">mit</label>
+            <input type="checkbox" class="TipePrepositionen" id="nachTipePrepositionen" name="TipePrepositionen"  value="nach"><label for="TipePrepositionen">nach</label>
+            <input type="checkbox" class="TipePrepositionen" id="vonTipePrepositionen" name="TipePrepositionen"  value="von"><label for="TipePrepositionen">von</label>
+            <input type="checkbox" class="TipePrepositionen" id="zuTipePrepositionen" name="TipePrepositionen"  value="zu"><label for="TipePrepositionen">zu</label>
+            <input type="checkbox" class="TipePrepositionen" id="fürTipePrepositionen" name="TipePrepositionen"  value="für"><label for="TipePrepositionen">für</label>
+            <input type="checkbox" class="TipePrepositionen" id="gegenTipePrepositionen" name="TipePrepositionen"  value="gegen"><label for="TipePrepositionen">gegen</label>
+            <input type="checkbox" class="TipePrepositionen" id="umTipePrepositionen" name="TipePrepositionen"  value="um"><label for="TipePrepositionen">um</label>
+            <input type="checkbox" class="TipePrepositionen" id="anTipePrepositionen" name="TipePrepositionen" checked value="an"><label for="TipePrepositionen">an</label>
+            <input type="checkbox" class="TipePrepositionen" id="aufTipePrepositionen" name="TipePrepositionen"  value="auf"><label for="TipePrepositionen">auf</label>
+            <input type="checkbox" class="TipePrepositionen" id="inTipePrepositionen" name="TipePrepositionen"  value="in"><label for="TipePrepositionen">in</label>
+            <input type="checkbox" class="TipePrepositionen" id="überTipePrepositionen" name="TipePrepositionen"  value="über"><label for="TipePrepositionen">über</label>
+            <input type="checkbox" class="TipePrepositionen" id="unterTipePrepositionen" name="TipePrepositionen"  value="unter"><label for="TipePrepositionen">unter</label>
+            <input type="checkbox" class="TipePrepositionen" id="vorTipePrepositionen" name="TipePrepositionen"  value="vor"><label for="TipePrepositionen">vor</label>
+            <input type="checkbox" class="TipePrepositionen" id="zwischenTipePrepositionen" name="TipePrepositionen"  value="zwischen"><label for="TipePrepositionen">zwischen</label>
+            <!-- <input type="checkbox" class="TipePrepositionen" id="allTipePrepositionen" name="TipePrepositionen" value="all"><label for="TipePrepositionen">All</label> -->
+            <button type="button" name="button" id="allTipePrepositionen">вибрати всі</button>
+        </div>
+        <div class="inputQuantityAnsvers">
+            <h1>Обираємо кількість варіантів відповідей</h1>
+            <input type="radio" id="threeQuantityAnsvers" name="QuantityAnsvers" value="3"><label for="QuantityAnsvers">3</label>
+            <input type="radio" id="fiveQuantityAnsvers" name="QuantityAnsvers" checked value="6"><label for="QuantityAnsvers">6</label>
+            <input type="radio" id="sevenQuantityAnsvers" name="QuantityAnsvers" value="9"><label for="QuantityAnsvers">9</label>
+            <!-- <input type="radio" id="allQuantityAnsvers" name="QuantityAnsvers"  value="all"><label for="QuantityAnsvers">Усі</label> -->
+        </div>
+        <div class="inputQuantityKasus">
+            <h1>Обираємо падежі</h1>
+            <input type="radio" id="datQuantityKasus" name="QuantityKasus" value="dat"><label for="dat">Dativ</label>
+            <input type="radio" id="akkQuantityKasus" name="QuantityKasus" value="akk"><label for="dat">Akkusativ</label>
+            <input type="radio" id="allQuantityKasus" name="QuantityKasus" checked value="all"><label for="dat">Усі</label>
+        </div>
+       <div class="inputSichToUse">
+            <h1>Використовувати дієслова з Sich</h1>
+            <input type="radio" id="onlyInputSichToUse" name="SichToUse" value="yes"><label for="onlySich">лише Sich</label>
+            <input type="radio" id="dontInputSichToUse"name="SichToUse" value="no"><label for="dontSich">без Sich</label>
+            <input type="radio" id="allInputSichToUse"name="SichToUse" checked value="all"><label for="useAll">Усі</label>
+       </div>
+       <div class="inputQuantityQuestions">
+            <h1>Скільки питань надавати</h1>
+            <input type="radio" id="10QuantityQuestions" name="QuantityQuestions" value="10"><label for="10QuantityQuestions">10</label>
+            <input type="radio" id="25QuantityQuestions" name="QuantityQuestions" value="25"><label for="10QuantityQuestions">25</label>
+            <input type="radio" id="50QuantityQuestions" name="QuantityQuestions" value="50"><label for="10QuantityQuestions">50</label>
+            <input type="radio" id="allQuantityQuestions" name="QuantityQuestions" checked value="all"><label for="10QuantityQuestions">Усі</label>
+
+       </div>
+       <button class="makeArray">сформувати</button>
+
+    </div>
+      <div class="boxAnswer displayNone">
+          <h1>Оберіть правильний прийменник</h1>
+      <p id="verb"></p> <p id="translate"></p>
+      <!-- <form id="prepositionForm">
+          <label for="preposition">Оберіть прийменник: </label>
+          <select id="preposition" name="preposition"> -->
+              <!-- Опції для варіантів прийменників будуть додані з JavaScript -->
+          <!-- </select>
+          <button type="button" id="checkButton">Перевірити</button>
+      </form> -->
+      <!-- <button type="button" id="next" class="button button_next">наступний</button> -->
+      <button type="button" id="newGame" class="displayNone">
+        <a href="index.html">Нова гра</a>
+      </button>
+      <p id="result"></p>
+      <div class="box" id="buttonContainer">
+
+      </div>
+      <button type="button" id="next" class="button button_next">наступний</button>
+
+    </div>
+    <!-- <div class="box" id="buttonContainer" https://github.com/egormkrtchian/Prepositionen.git>
+
+    </div>
+    <button type="button" id="next" class="button button_next">наступний</button> -->
+    <script src="./js/app2.js"></script>
+
+</body>
+</html>
