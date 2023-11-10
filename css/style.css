@@ -3,7 +3,9 @@ button {
   height: 40px;
   border-radius: 20px;
 }
-
+body{
+  max-width: 375px;
+}
 header button {
   width: 100%;
   height: 160px;
