@@ -5,10 +5,12 @@ button {
 }
 body{
   max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
 }
 header button {
   width: 100%;
-  height: 160px;
+  height: 10%;
   padding: 30px 10px;
   display: flex;
   justify-content: space-between;

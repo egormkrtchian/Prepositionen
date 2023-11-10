@@ -553,8 +553,9 @@ function getRandomElementsFromArray(array, n) {
     if (n >= array.length) {
       return array.slice(); // Повертаємо копію всього масиву, якщо n більше або рівне довжині масиву
     } else {
-      let newMiwedArray = array.slice(0, n); // Копія масиву, яку будемо перемішувати Повертаємо перші n елементів
+      let newMiwedArray = array; // Копія масиву, яку будемо перемішувати Повертаємо перші n елементів
       mixArray(newMiwedArray);
+      newMiwedArray = newMiwedArray.slice(0, n);
       return newMiwedArray;
     };
 };
