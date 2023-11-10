@@ -399,11 +399,11 @@ function play(){
       console.log('click');
 
       if (selectedPreposition === currentVerb.prep) {
-        resultElement.textContent = 'Вірно! Правильний прийменник.';
+        // resultElement.textContent = 'Вірно! Правильний прийменник.';
         button.classList.add('rightAnswer');
         stopClick = true;
       } else {
-        resultElement.textContent = 'Неправильно. Правильний прийменник: ' + currentVerb.prep;
+        // resultElement.textContent = 'Неправильно. Правильний прийменник: ' + currentVerb.prep;
         //button.style.border = '4px solid red';
         button.classList.add('wrongAnswer');
         for(btn of answerButtons) {

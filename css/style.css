@@ -7,6 +7,7 @@ body{
   max-width: 375px;
   margin-left: auto;
   margin-right: auto;
+  background: yellow;
 }
 header button {
   width: 100%;
@@ -17,12 +18,16 @@ header button {
   align-items: center;
 }
 
+main {
+  padding: 0 10px;
+}
 .hover {
   border: 2px solid grey;
 }
 .box {
   display: grid;
   grid-gap: 10px;
+  justify-content: center;
 }
 .displayNone {
   display: none;
@@ -38,3 +43,73 @@ header button {
   margin-top: 15px;
   background-color: green;
 }
+.posRelative {
+  position: relative;
+}
+.df-jc {
+  /* position:relative; */
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.posAbsolutTextUp {
+  position: absolute;
+  transform: translateY(-12px);
+  background: yellow;
+}
+/* <div class="checkbox-wrapper-47">
+  <input type="checkbox" name="cb" id="cb-47" />
+  <label for="cb-47">Check this</label>
+</div>
+
+*/
+
+  .checkboxCheck input[type="radio"] {
+    display: none;
+    visibility: hidden;
+  }
+
+  .checkboxCheck label {
+    position: relative;
+    padding-left: 1em;
+    padding-right: 1em;
+    line-height: 2;
+    cursor: pointer;
+    display: inline-flex;
+  }
+
+  .checkboxCheck label:before {
+    box-sizing: border-box;
+    content: " ";
+    position: absolute;
+    top: 0.3em;
+    left: 0;
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    z-index: -1;
+  }
+
+  .checkboxCheck input[type=radio]:checked + label {
+    padding-left: 1em;
+    color: #0f5229;
+  }
+  .checkboxCheck input[type=radio]:checked + label:before {
+    top: 0;
+    width: 100%;
+    height: 2em;
+    background: #b7e6c9;
+    border-color: #2cbc63;
+  }
+
+  .checkboxCheck label,
+  .checkboxCheck label::before {
+    transition: 0.25s all ease;
+  }
