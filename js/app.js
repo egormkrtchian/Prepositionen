@@ -515,10 +515,14 @@ function generateArray() {
         filterOptions.sich = sichToUse;
         resultArray = filterArray(resultArray, filterOptions); // yes || no
     };
+
+    mixArray(resultArray);
     // якщо не усі разом
-    if (quantityQuestions != 'all') {
-        resultArray = getRandomElementsFromArray(resultArray, quantityQuestions);
-    };
+  //  resultArray = getRandomElementsFromArray(resultArray, quantityQuestions !== 'all' ? quantityQuestions : resultArray.length);
+    resultArray = quantityQuestions != 'all' ? resultArray.slice(0, quantityQuestions) : resultArray;
+    // if (quantityQuestions != 'all') {
+    //     resultArray = cutArray(resultArray, quantityQuestions);
+    // };
     console.log("вивидимо відсортований масив", resultArray);
     // запускаємо гру
     prepositionsChois.style.display = 'none';
@@ -549,16 +553,35 @@ function filterArray(resultArray, filterOptions) {
     });
 };
 
-function getRandomElementsFromArray(array, n) {
-    if (n >= array.length) {
-      return array.slice(); // Повертаємо копію всього масиву, якщо n більше або рівне довжині масиву
-    } else {
-      let newMiwedArray = array.slice(); // Копія масиву, яку будемо перемішувати Повертаємо перші n елементів
-      mixArray(newMiwedArray);
-      newMiwedArray = newMiwedArray.slice(0, n);
-      return newMiwedArray;
-    };
-};
+
+// const getRandomElementsFromArray = (array, n) => {
+//   if (n >= array.length) {
+//     return array.slice(); // Повертаємо копію всього масиву, якщо n більше або рівне довжині масиву
+//   } else {
+//     const shuffledArray = array.slice(); // Копія масиву, яку будемо перемішувати
+//     shuffle(shuffledArray);
+//     return shuffledArray.slice(0, n); // Повертаємо перші n елементів
+//   }
+// };
+
+// function cutArray(array,n) {
+//   if (n >= array.length) {
+//     return array.slice(); // Повертаємо копію всього масиву, якщо n більше або рівне довжині масиву
+//   } else {
+//     return array.slice(0, n);
+//   }
+// }
+// Алгоритм тасування Fisher-Yates
+// const shuffle = (array) => {
+//   let m = array.length, t, i;
+//   while (m) {
+//     i = Math.floor(Math.random() * m--);
+//     t = array[m];
+//     array[m] = array[i];
+//     array[i] = t;
+//   }
+//   return array;
+// };
 //переродляє масив, правильна відповідь на першому місці
 function varianteAntwort(array, prepositionRight, n) {
   const index = array.indexOf(prepositionRight);
@@ -571,19 +594,22 @@ function varianteAntwort(array, prepositionRight, n) {
   variantPrapositionArray = mixArray(variantPrapositionArray) // міксуємо
 };
 
-// Перемішуємо елементи масива
+// Перемішуємо елементи масива  Алгоритм тасування Fisher-Yates
 function mixArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  };
+  let m = array.length, t, i;
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
   return array;
 };
 
 // створюєто кнопки відповідей з масива препозиції
 function createButton(array) {
   // Очищаємо контейнер перед додаванням нових кнопок
- box.innerHTML = '';
+  box.innerHTML = '';
   for (let i = 0; i < array.length; i++) {
     const button = document.createElement("button");
     button.classList.add("answerButton");
