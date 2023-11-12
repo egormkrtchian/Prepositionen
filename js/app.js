@@ -27,7 +27,7 @@ const anAkk = [
     {verb: 'anpassen', prep: 'an', kasus: 'akk', ubersetz: 'пристосовуватися до', sich: 'no'},
     {verb: 'appelieren', prep: 'an', kasus: 'akk', ubersetz: 'апелювати до', sich: 'no'},
     {verb: 'denken (-,a,a)', prep: 'an', kasus: 'akk', ubersetz: 'думати про', sich: 'no'},
-    {verb: 'sich halten (ä,ie,a')', prep: 'an', kasus: 'akk', ubersetz: 'дотримуватися', sich: 'yes'},
+    {verb: 'sich halten (ä,ie,a)', prep: 'an', kasus: 'akk', ubersetz: 'дотримуватися', sich: 'yes'},
     {verb: 'liefern', prep: 'an', kasus: 'akk', ubersetz: 'доставляти', sich: 'no'},
     {verb: 'sich machen', prep: 'an', kasus: 'akk', ubersetz: 'братися до, за', sich: 'yes'},
     {verb: 'richten', prep: 'an', kasus: 'akk', ubersetz: 'адремувати до', sich: 'no'},
@@ -218,11 +218,29 @@ const inDat = [
         {verb: 'zusammenstoßen (ö,ie,o)', prep: 'mit', kasus: 'dat', ubersetz: 'зіткнутися з', sich: 'no'}
     ];
     const nachDat = [
-        {verb: '', prep: 'nach', kasus: 'dat', ubersetz: 'змінювати', sich: 'no'},
-        {verb: '', prep: 'nach', kasus: 'dat', ubersetz: 'впізнавати', sich: 'no'}
+        {verb: 'beurteilen', prep: 'nach', kasus: 'dat', ubersetz: 'оцінювати', sich: 'no'},
+        {verb: 'duften', prep: 'nach', kasus: 'dat', ubersetz: 'пахнути чимось', sich: 'no'},
+        {verb: 'sich erkundigen', prep: 'nach', kasus: 'dat', ubersetz: 'питати при', sich: 'yes'},
+        {verb: 'fahnden', prep: 'nach', kasus: 'dat', ubersetz: 'шукати', sich: 'no'},
+        {verb: 'forschen', prep: 'nach', kasus: 'dat', ubersetz: 'досліджувати що небудь', sich: 'no'},
+        {verb: 'fragen', prep: 'nach', kasus: 'dat', ubersetz: 'запитивати при', sich: 'no'},
+        {verb: 'greifen (-,if,if)', prep: 'nach', kasus: 'dat', ubersetz: 'схоплювати', sich: 'no'},
+        {verb: 'sich richten', prep: 'nach', kasus: 'dat', ubersetz: 'керувати чимось', sich: 'yes'},
+        {verb: 'riechen (-,o,o)', prep: 'nach', kasus: 'dat', ubersetz: 'пахнути чимось', sich: 'no'},
+        {verb: 'rufen (-,ie,u)', prep: 'nach', kasus: 'dat', ubersetz: 'кричати на', sich: 'no'},
+        {verb: 'schmecken', prep: 'nach', kasus: 'dat', ubersetz: 'смакувати як', sich: 'no'},
+        {verb: 'sich sehnen', prep: 'nach', kasus: 'dat', ubersetz: 'прагнути до, тужити за', sich: 'yes'},
+        {verb: 'stinken (-,a,u)', prep: 'nach', kasus: 'dat', ubersetz: 'смердіти як', sich: 'no'},
+        {verb: 'streben', prep: 'nach', kasus: 'dat', ubersetz: 'прагнути до', sich: 'no'},
+        {verb: 'suchen', prep: 'nach', kasus: 'dat', ubersetz: 'шукати', sich: 'no'},
+        {verb: 'tasten', prep: 'nach', kasus: 'dat', ubersetz: 'доторкатися до', sich: 'no'},
+        {verb: 'sich unterscheiden (-,ie,ie)', prep: 'nach', kasus: 'dat', ubersetz: 'відрізнятися від', sich: 'yes'},
+        {verb: 'urteilen', prep: 'nach', kasus: 'dat', ubersetz: 'судити за', sich: 'no'},
+        {verb: 'verlangen', prep: 'nach', kasus: 'dat', ubersetz: 'прагнути, вимагати', sich: 'no'}
     ];
     const uberAkk = [
         {verb: '', prep: 'uber', kasus: 'akk', ubersetz: '', sich: 'no'},
+
         {verb: '', prep: 'uber', kasus: 'akk', ubersetz: '', sich: 'no'}
     ];
     const umAkk = [
@@ -422,8 +440,8 @@ function play(){
 function displayNewVerb() {
     if (currentVerbIndex < resultArray.length) {
         const currentVerb = resultArray[currentVerbIndex];
-        verbElement.textContent = `Дієслово: ${currentVerb.verb}`;
-        translate.textContent = `Переклад: ${currentVerb.ubersetz}`;
+        verbElement.textContent = `${currentVerb.verb}`;
+        translate.textContent = `${currentVerb.ubersetz}`;
         // запускаємо формування радіокнопо
         varianteAntwort(prepositions, currentVerb.prep, quantityAnsver );
         createButton(variantPrapositionArray);
