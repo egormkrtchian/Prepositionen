@@ -129,6 +129,11 @@ footer p {
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
+
+#btnBack {
+  display: none;
+}
+
 .posAbsolutTextUp {
   position: absolute;
   transform: translateY(-12px);

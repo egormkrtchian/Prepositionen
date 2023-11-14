@@ -431,6 +431,7 @@ const prepositionenCheckboxes = document.querySelectorAll('.TipePrepositionen');
 const allTipePrepositionenCheckButton = document.getElementById('allTipePrepositionen');
 
 allTipePrepositionenCheckButton.addEventListener('click', ()=>{
+  btnBack.style.display = 'block'; // add style to button hover
   // Отримуємо поточний стан кнопки
   const isSelectAll = allTipePrepositionenCheckButton.textContent === 'вибрати всі';
 // Змінюємо стан всіх чекбоксів відповідно до значення isSelectAll
@@ -476,6 +477,7 @@ next.addEventListener('click', play);
 
 
 function play(){
+  btnBack.style.display = 'block';
   displayNewVerb();
   resultElement.textContent = '';
   let stopClick = false;
@@ -640,13 +642,41 @@ function generateArray() {
 };
 
 const checkboxes = document.querySelectorAll('.TipePrepositionen');
+const btnBack = document.getElementById('btnBack');
 
-checkboxes.forEach(function(checkbox) {
+checkboxes.forEach(function(checkbox) { // change  border zurück
   checkbox.addEventListener('change', function(event) {
     borderCheckBox.style.border = '2px solid grey';
+    btnBack.style.display = 'block'; // add style button in hover
   });
 });
 
+const allQuantityAnsver = document.querySelectorAll('.allQuantityAnsver');
+const allQuantityKasus = document.querySelectorAll('.allQuantityKasus');
+const allSichToUse = document.querySelectorAll('.allSichToUse');
+const allQuantityQuestions = document.querySelectorAll('.allQuantityQuestions');
+
+allQuantityAnsver.forEach(checkbox => {
+  addStyleToBtnHover(checkbox);
+});
+
+allQuantityKasus.forEach(checkbox => {
+  addStyleToBtnHover(checkbox);
+});
+
+allSichToUse.forEach(checkbox => {
+  addStyleToBtnHover(checkbox);
+});
+
+allQuantityQuestions.forEach(checkbox => {
+  addStyleToBtnHover(checkbox);
+});
+
+function addStyleToBtnHover(checkbox) {
+  checkbox.addEventListener('change', ()=>{
+    btnBack.style.display = 'block'; // add style to button hover
+  })
+}
 
 // фільтруємо сформований масив
 function filterArray(resultArray, filterOptions) {
