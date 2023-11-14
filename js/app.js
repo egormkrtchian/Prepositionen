@@ -425,6 +425,7 @@ const next = document.getElementById('next');
 const newGame = document.getElementById('newGame');
 const boxAnswer = document.querySelector('.boxAnswer');
 
+const borderCheckBox = document.querySelector('.df');
 
 const prepositionenCheckboxes = document.querySelectorAll('.TipePrepositionen');
 const allTipePrepositionenCheckButton = document.getElementById('allTipePrepositionen');
@@ -616,20 +617,36 @@ function generateArray() {
         resultArray = filterArray(resultArray, filterOptions); // yes || no
     };
 
-    mixArray(resultArray);
-    // якщо не усі разом
-  //  resultArray = getRandomElementsFromArray(resultArray, quantityQuestions !== 'all' ? quantityQuestions : resultArray.length);
-    resultArray = quantityQuestions != 'all' ? resultArray.slice(0, quantityQuestions) : resultArray;
-    // if (quantityQuestions != 'all') {
-    //     resultArray = cutArray(resultArray, quantityQuestions);
-    // };
-    console.log("вивидимо відсортований масив", resultArray);
-    // запускаємо гру
-    prepositionsChois.style.display = 'none';
-    boxAnswer.style.display = 'block';
-    quantityAnsver = quantityAnsvers;
-    play();
+    if (resultArray.length === 0) { // if array hat keine element
+
+        borderCheckBox.style.border = '3px solid red';
+        console.log("array = 0");
+    } else {
+        mixArray(resultArray);
+        // якщо не усі разом
+      //  resultArray = getRandomElementsFromArray(resultArray, quantityQuestions !== 'all' ? quantityQuestions : resultArray.length);
+        resultArray = quantityQuestions != 'all' ? resultArray.slice(0, quantityQuestions) : resultArray;
+        // if (quantityQuestions != 'all') {
+        //     resultArray = cutArray(resultArray, quantityQuestions);
+        // };
+
+        console.log("вивидимо відсортований масив", resultArray);
+        // запускаємо гру
+        prepositionsChois.style.display = 'none';
+        boxAnswer.style.display = 'block';
+        quantityAnsver = quantityAnsvers;
+        play();
+    }
 };
+
+const checkboxes = document.querySelectorAll('.TipePrepositionen');
+
+checkboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function(event) {
+    borderCheckBox.style.border = '2px solid grey';
+  });
+});
+
 
 // фільтруємо сформований масив
 function filterArray(resultArray, filterOptions) {
