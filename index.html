@@ -46,7 +46,7 @@
               <input type="checkbox" class="TipePrepositionen" id="vorTipePrepositionen" name="TipePrepositionen"  value="vor"><label for="vorTipePrepositionen">vor</label>
               <input type="checkbox" class="TipePrepositionen" id="zwischenTipePrepositionen" name="TipePrepositionen"  value="zwischen"><label for="zwischenTipePrepositionen">zwischen</label>
               <!-- <input type="checkbox" class="TipePrepositionen" id="allTipePrepositionen" name="TipePrepositionen" value="all"><label for="TipePrepositionen">All</label> -->
-              <button type="button" name="button" id="allTipePrepositionen">вибрати всі</button>
+              <button type="button" name="button" id="allTipePrepositionen"><span>вибрати всі</span></button>
             </div>
         </div>
         <div class="inputQuantityAnsvers posRelative">
@@ -91,9 +91,11 @@
     </div>
 
     <div class="boxAnswer displayNone">
-      <h3>Оберіть правильний прийменник</h3>
-      <p>Дієслово: <span id="verb" class="bold"></p>
-      <p>Переклад: <span id="translate" class="bold"></p>
+      <div class="questions_box">
+        <h3>Оберіть правильний прийменник</h3>
+        <p>Дієслово: <span id="verb" class="bold"></p>
+        <p>Переклад: <span id="translate" class="bold"></p>
+      </div>
       <!-- <form id="prepositionForm">
           <label for="preposition">Оберіть прийменник: </label>
           <select id="preposition" name="preposition"> -->
@@ -117,6 +119,9 @@
     </div>
     <button type="button" id="next" class="button button_next">наступний</button> -->
     </main>
+    <footer>
+      © Yehor Mkrtchian e.a.mkrtchian@gmail.com
+    </footer>
     <script src="./js/app.js"></script>
 
 </body>

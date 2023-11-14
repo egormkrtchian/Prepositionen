@@ -12,11 +12,11 @@ const anDat = [
     {verb: 'mangeln', prep: 'an', kasus: 'dat', ubersetz: 'невистачати', sich: 'no'},
     {verb: 'mitwirken', prep: 'an', kasus: 'dat', ubersetz: 'сприяти', sich: 'no'},
     {verb: 'sich beteiligen', prep: 'an', kasus: 'dat', ubersetz: 'брати участь у', sich: 'yes'},
-    {verb: 'sich erfreuen', prep: 'an', kasus: 'dat', ubersetz: 'радіти чомусь', sich: 'yes'},
+    {verb: 'sich erfreuen', prep: 'an', kasus: 'dat', ubersetz: 'насолоджуватися чимось, радіти чомусь', sich: 'yes'},
     {verb: 'sich orientiren', prep: 'an', kasus: 'dat', ubersetz: 'орієнтуватися', sich: 'yes'},
-    {verb: 'sich rächen', prep: 'an', kasus: 'dat', ubersetz: 'мститися  комусь', sich: 'yes'},
+    {verb: 'sich rächen', prep: 'an', kasus: 'dat', ubersetz: 'відплачувати комусь', sich: 'yes'},
     {verb: 'schreiben (-,ie,ie)', prep: 'an', kasus: 'dat', ubersetz: 'писати комусь', sich: 'no'},
-    {verb: 'sterben (i,a,o)', prep: 'an', kasus: 'dat', ubersetz: 'помирати від', sich: 'no'},
+    {verb: 'sterben (i,a,o)', prep: 'an', kasus: 'dat', ubersetz: 'помирати від чогось', sich: 'no'},
     {verb: 'teilhaben (i,a,o)', prep: 'an', kasus: 'dat', ubersetz: 'брати участь у', sich: 'no'},
     {verb: 'teilnehmen (i,a,o)', prep: 'an', kasus: 'dat', ubersetz: 'брати участь у', sich: 'no'},
     {verb: 'zunehmen', prep: 'an', kasus: 'dat', ubersetz: 'збільшуватися на', sich: 'no'},
@@ -180,7 +180,7 @@ const inDat = [
     {verb: 'unterrichten', prep: 'in', kasus: 'dat', ubersetz: 'викладати в', sich: 'no'},
     {verb: 'übertreffen (i,a,o)', prep: 'in', kasus: 'dat', ubersetz: 'перевершити в', sich: 'no'}
 ];
-    const mitDat = [
+const mitDat = [
         {verb: 'sich beschäftigen', prep: 'mit', kasus: 'dat', ubersetz: 'займатися чимось', sich: 'yes'},
         {verb: 'diskutieren', prep: 'mit', kasus: 'dat', ubersetz: 'діскусувати з', sich: 'no'},
         {verb: 'sprechen', prep: 'mit', kasus: 'dat', ubersetz: 'розмовляти з', sich: 'no'},
@@ -216,8 +216,8 @@ const inDat = [
         {verb: 'verwechseln', prep: 'mit', kasus: 'dat', ubersetz: 'плутати, перемішувати', sich: 'no'},
         {verb: 'zögern', prep: 'mit', kasus: 'dat', ubersetz: 'вагатися з, тягнути час', sich: 'no'},
         {verb: 'zusammenstoßen (ö,ie,o)', prep: 'mit', kasus: 'dat', ubersetz: 'зіткнутися з', sich: 'no'}
-    ];
-    const nachDat = [
+];
+const nachDat = [
         {verb: 'beurteilen', prep: 'nach', kasus: 'dat', ubersetz: 'оцінювати', sich: 'no'},
         {verb: 'duften', prep: 'nach', kasus: 'dat', ubersetz: 'пахнути чимось', sich: 'no'},
         {verb: 'sich erkundigen', prep: 'nach', kasus: 'dat', ubersetz: 'питати при', sich: 'yes'},
@@ -237,20 +237,101 @@ const inDat = [
         {verb: 'sich unterscheiden (-,ie,ie)', prep: 'nach', kasus: 'dat', ubersetz: 'відрізнятися від', sich: 'yes'},
         {verb: 'urteilen', prep: 'nach', kasus: 'dat', ubersetz: 'судити за', sich: 'no'},
         {verb: 'verlangen', prep: 'nach', kasus: 'dat', ubersetz: 'прагнути, вимагати', sich: 'no'}
+];
+const uberAkk = [
+        {verb: 'sich ärgern', prep: 'uber', kasus: 'akk', ubersetz: 'злитися через', sich: 'yes'},
+        {verb: 'sich beschweren', prep: 'uber', kasus: 'akk', ubersetz: 'скаржитися через', sich: 'yes'},
+        {verb: 'diskutieren', prep: 'uber', kasus: 'akk', ubersetz: 'дискутувати через', sich: 'no'},
+        {verb: 'sprechen (i,a,o)', prep: 'uber', kasus: 'akk', ubersetz: 'розмовляти о', sich: 'no'},
+        {verb: 'sich freuen', prep: 'uber', kasus: 'akk', ubersetz: 'радіти тому що вже є', sich: 'yes'},
+        {verb: 'sich informieren', prep: 'uber', kasus: 'akk', ubersetz: 'інформуватися', sich: 'yes'},
+        {verb: 'nachdenken (-,a,acht)', prep: 'uber', kasus: 'akk', ubersetz: 'роздумувати', sich: 'no'},
+        {verb: 'reden', prep: 'uber', kasus: 'akk', ubersetz: 'розмовляти', sich: 'no'},
+        {verb: 'sich streiten (-,i,i)', prep: 'uber', kasus: 'akk', ubersetz: 'сваритися через', sich: 'yes'},
+        {verb: 'sich unterhalten (ä,ie,a)', prep: 'uber', kasus: 'akk', ubersetz: 'розмовляти', sich: 'yes'},
+        {verb: 'lachen', prep: 'uber', kasus: 'akk', ubersetz: 'сміятися', sich: 'no'},
+        {verb: 'sich aufreden', prep: 'uber', kasus: 'akk', ubersetz: 'збуджуватися через', sich: 'yes'},
+        {verb: 'sich austauschen', prep: 'uber', kasus: 'akk', ubersetz: 'обговорювати щось, знайомитися', sich: 'yes'},
+        {verb: 'sich beklagen', prep: 'uber', kasus: 'akk', ubersetz: 'скаржитися', sich: 'yes'},
+        {verb: 'berichten', prep: 'uber', kasus: 'akk', ubersetz: 'повідомляти при', sich: 'no'},
+        {verb: 'sich entrüsten', prep: 'uber', kasus: 'akk', ubersetz: 'обурюватися через', sich: 'yes'},
+        {verb: 'sich erregen', prep: 'uber', kasus: 'akk', ubersetz: 'збуджуватися через', sich: 'yes'},
+        {verb: 'sich erschrecken (i,a,o)', prep: 'uber', kasus: 'akk', ubersetz: 'лякатися через', sich: 'yes'},
+        {verb: 'herrschen', prep: 'uber', kasus: 'akk', ubersetz: 'панувати над', sich: 'no'},
+        {verb: 'jammern', prep: 'uber', kasus: 'akk', ubersetz: 'скаржитися на', sich: 'no'},
+        {verb: 'jubeln', prep: 'uber', kasus: 'akk', ubersetz: 'радіти через', sich: 'no'},
+        {verb: 'klagen', prep: 'uber', kasus: 'akk', ubersetz: 'скаржитись на', sich: 'no'},
+        {verb: 'referieren', prep: 'uber', kasus: 'akk', ubersetz: 'доповідати про', sich: 'no'},
+        {verb: 'schimpfen', prep: 'uber', kasus: 'akk', ubersetz: 'гомонити, лаяти', sich: 'no'},
+        {verb: 'siegen', prep: 'uber', kasus: 'akk', ubersetz: 'перемогати над', sich: 'no'},
+        {verb: 'spotten', prep: 'uber', kasus: 'akk', ubersetz: 'насміхатися', sich: 'no'},
+        {verb: 'urteilen', prep: 'uber', kasus: 'akk', ubersetz: 'судити при', sich: 'no'},
+        {verb: 'verfügen', prep: 'uber', kasus: 'akk', ubersetz: 'мати ресурс', sich: 'no'},
+        {verb: 'weinen', prep: 'uber', kasus: 'akk', ubersetz: 'плакати', sich: 'no'},
+        {verb: 'sich wundern', prep: 'uber', kasus: 'akk', ubersetz: 'дивуватися чомусь', sich: 'yes'},
+        {verb: 'schreiben', prep: 'uber', kasus: 'akk', ubersetz: 'писати при', sich: 'no'}
     ];
-    const uberAkk = [
-        {verb: '', prep: 'uber', kasus: 'akk', ubersetz: '', sich: 'no'},
+const umAkk = [
+    {verb: 'sich bewerben (i,a,o)', prep: 'um', kasus: 'akk', ubersetz: 'подовати заявку до', sich: 'yes'},
+    {verb: 'bitten (-,a,o)', prep: 'um', kasus: 'akk', ubersetz: 'присити про', sich: 'no'},
+    {verb: 'sich kümmern', prep: 'um', kasus: 'akk', ubersetz: 'піклуватися за', sich: 'yes'},
+    {verb: 'sich ängstigen', prep: 'um', kasus: 'akk', ubersetz: 'турбуватися за', sich: 'yes'},
+    {verb: 'sich bemühen', prep: 'um', kasus: 'akk', ubersetz: 'прагнути до', sich: 'yes'},
+    {verb: 'beneiden', prep: 'um', kasus: 'akk', ubersetz: 'заздрити', sich: 'no'},
+    {verb: 'betrügen (-,o,o)', prep: 'um', kasus: 'akk', ubersetz: 'обманювати', sich: 'no'},
+    {verb: 'betteln', prep: 'um', kasus: 'akk', ubersetz: 'просити за', sich: 'no'},
+    {verb: 'sich drehen', prep: 'um', kasus: 'akk', ubersetz: 'обертатися навколо', sich: 'yes'},
+    {verb: 'erhöhen', prep: 'um', kasus: 'akk', ubersetz: 'збільшуватися на, підвишуватися', sich: 'no'},
+    {verb: 'gehen (-,i,a)', prep: 'um', kasus: 'akk', ubersetz: 'йтися при', sich: 'no'},
+    {verb: 'sich handeln', prep: 'um', kasus: 'akk', ubersetz: 'йдеться при, мати справу', sich: 'yes'},
+    {verb: 'kämpfen', prep: 'um', kasus: 'akk', ubersetz: 'боротися за', sich: 'no'},
+    {verb: 'sich schlagen (ä,u,a)', prep: 'um', kasus: 'akk', ubersetz: 'боротися за, схилятися', sich: 'yes'},
+    {verb: 'sich sorgen', prep: 'um', kasus: 'akk', ubersetz: 'турбуватися про', sich: 'yes'},
+    {verb: 'spielen', prep: 'um', kasus: 'akk', ubersetz: 'грати за, на', sich: 'no'},
+    {verb: 'streiten (-,i,i)', prep: 'um', kasus: 'akk', ubersetz: 'сваритися через', sich: 'no'},
+    {verb: 'steigen', prep: 'um', kasus: 'akk', ubersetz: 'зростати', sich: 'no'},
+    {verb: 'vermindern', prep: 'um', kasus: 'akk', ubersetz: 'зменшитися на', sich: 'no'},
+    {verb: 'verringern', prep: 'um', kasus: 'akk', ubersetz: 'зменшитися на', sich: 'no'},
+    {verb: 'werfen (i,a,o)', prep: 'um', kasus: 'akk', ubersetz: 'заохочувати, рекламувати', sich: 'no'},
+    {verb: 'wetten', prep: 'um', kasus: 'akk', ubersetz: 'ставити на щоць, закладитися', sich: 'no'},
+    {verb: 'wissen (ei,u,u)', prep: 'um', kasus: 'akk', ubersetz: 'знати при', sich: 'no'}
+];
 
-        {verb: '', prep: 'uber', kasus: 'akk', ubersetz: '', sich: 'no'}
-    ];
-    const umAkk = [
-        {verb: '', prep: 'um', kasus: 'akk', ubersetz: '', sich: 'no'},
-        {verb: '', prep: 'um', kasus: 'akk', ubersetz: '', sich: 'no'}
-    ];
 
-    const vonDat = [
-        {verb: '', prep: 'von', kasus: 'dat', ubersetz: '', sich: 'no'},
-    ];
+const vonDat = [
+    {verb: 'ausgehen (-,ing,ang)', prep: 'von', kasus: 'dat', ubersetz: 'припускати', sich: 'no'},
+    {verb: 'erzählen', prep: 'von', kasus: 'dat', ubersetz: 'розповідати, пояснувати', sich: 'no'},
+    {verb: 'sprechen (i,a,o)', prep: 'von', kasus: 'dat', ubersetz: 'розмовляти при', sich: 'no'},
+    {verb: 'reden', prep: 'von', kasus: 'dat', ubersetz: 'розмовляти про', sich: 'no'},
+    {verb: 'träumen', prep: 'von', kasus: 'dat', ubersetz: 'мріяти про', sich: 'no'},
+    {verb: 'abhängen', prep: 'von', kasus: 'dat', ubersetz: 'залежити від', sich: 'no'},
+    {verb: 'ablenken', prep: 'von', kasus: 'dat', ubersetz: 'відволікатся від', sich: 'no'},
+    {verb: 'abschreiben (-,ie,ie)', prep: 'von', kasus: 'dat', ubersetz: 'скапіювати з чогось', sich: 'no'},
+    {verb: 'absehen', prep: 'von', kasus: 'dat', ubersetz: 'утвиматися від', sich: 'no'},
+    {verb: 'sich abwenden', prep: 'von', kasus: 'dat', ubersetz: 'відвернутися від', sich: 'yes'},
+    {verb: 'sich ausruhen', prep: 'von', kasus: 'dat', ubersetz: 'відпочивати від', sich: 'yes'},
+    {verb: 'befreien', prep: 'von', kasus: 'dat', ubersetz: 'звільняти від', sich: 'no'},
+    {verb: 'berichten', prep: 'von', kasus: 'dat', ubersetz: 'повідомляти при', sich: 'no'},
+    {verb: 'sich distanzieren', prep: 'von', kasus: 'dat', ubersetz: 'дистанціватися від', sich: 'yes'},
+    {verb: 'erfahren (ä,u,a)', prep: 'von', kasus: 'dat', ubersetz: 'дізнаватися при', sich: 'no'},
+    {verb: 'sich erholen', prep: 'von', kasus: 'dat', ubersetz: 'відпочивати від', sich: 'yes'},
+    {verb: 'sich ernähren', prep: 'von', kasus: 'dat', ubersetz: 'харчуватися чимось', sich: 'yes'},
+    {verb: 'erwarten', prep: 'von', kasus: 'dat', ubersetz: 'очікувати від', sich: 'no'},
+    {verb: 'halten (ä,ie,a)', prep: 'von', kasus: 'dat', ubersetz: 'мати думку про', sich: 'no'},
+    {verb: 'handeln', prep: 'von', kasus: 'dat', ubersetz: 'йти при', sich: 'no'},
+    {verb: 'hören', prep: 'von', kasus: 'dat', ubersetz: 'слухати при', sich: 'no'},
+    {verb: 'leben', prep: 'von', kasus: 'dat', ubersetz: 'жити, утримувати з', sich: 'no'},
+    {verb: 'loskommen (-,a,o)', prep: 'von', kasus: 'dat', ubersetz: 'позбавитися від', sich: 'no'},
+    {verb: 'sagen', prep: 'von', kasus: 'dat', ubersetz: 'говрити при', sich: 'no'},
+    {verb: 'schreiben (-,ie,ie)', prep: 'von', kasus: 'dat', ubersetz: 'писати про', sich: 'no'},
+    {verb: 'überzeugen', prep: 'von', kasus: 'dat', ubersetz: 'заохочувати до', sich: 'no'},
+    {verb: 'sich unterschreiben (-,ie,ie)', prep: 'von', kasus: 'dat', ubersetz: 'відрізнятися', sich: 'yes'},
+    {verb: 'verlangen', prep: 'von', kasus: 'dat', ubersetz: 'вимагати від, просити при', sich: 'no'},
+    {verb: 'verstehen (-,a,a)', prep: 'von', kasus: 'dat', ubersetz: 'розумітися у', sich: 'no'},
+    {verb: 'wissen (-,u,u)', prep: 'von', kasus: 'dat', ubersetz: 'знати про', sich: 'no'},
+    {verb: 'erzählen', prep: 'von', kasus: 'dat', ubersetz: 'розповідати про', sich: 'no'}
+]
+
 const vorDat = [
     {verb: 'sich ängstigen', prep: 'vor', kasus: 'dat', ubersetz: 'лякатися перед', sich: 'yes'},
     {verb: 'sich ekeln', prep: 'vor', kasus: 'dat', ubersetz: 'відчувати огиду перед', sich: 'yes'},
