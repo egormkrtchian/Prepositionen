@@ -434,6 +434,7 @@ allTipePrepositionenCheckButton.addEventListener('click', ()=>{
   btnBack.style.display = 'block'; // add style to button hover
   // Отримуємо поточний стан кнопки
   const isSelectAll = allTipePrepositionenCheckButton.textContent === 'вибрати всі';
+  borderCheckBox.style.border = '2px solid grey';
 // Змінюємо стан всіх чекбоксів відповідно до значення isSelectAll
   prepositionenCheckboxes.forEach(function(checkbox){
     checkbox.checked = isSelectAll;
@@ -651,6 +652,7 @@ checkboxes.forEach(function(checkbox) { // change  border zurück
   });
 });
 
+// add style to button hover
 const allQuantityAnsver = document.querySelectorAll('.allQuantityAnsver');
 const allQuantityKasus = document.querySelectorAll('.allQuantityKasus');
 const allSichToUse = document.querySelectorAll('.allSichToUse');
