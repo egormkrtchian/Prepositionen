@@ -30,7 +30,7 @@ const anAkk = [
     {verb: 'sich halten (ä,ie,a)', prep: 'an', kasus: 'akk', ubersetz: 'дотримуватися', sich: 'yes'},
     {verb: 'liefern', prep: 'an', kasus: 'akk', ubersetz: 'доставляти', sich: 'no'},
     {verb: 'sich machen', prep: 'an', kasus: 'akk', ubersetz: 'братися до, за', sich: 'yes'},
-    {verb: 'richten', prep: 'an', kasus: 'akk', ubersetz: 'адремувати до', sich: 'no'},
+    {verb: 'richten', prep: 'an', kasus: 'akk', ubersetz: 'адреcувати до', sich: 'no'},
     {verb: 'schicken', prep: 'an', kasus: 'akk', ubersetz: 'відправляти (пошту)', sich: 'no'},
     {verb: 'senden', prep: 'an', kasus: 'akk', ubersetz: 'надсилати', sich: 'no'},
     {verb: 'schreiben', prep: 'an', kasus: 'akk', ubersetz: 'писати', sich: 'no'},
@@ -622,7 +622,7 @@ function generateArray() {
 
     if (resultArray.length === 0) { // if array hat keine element
 
-        borderCheckBox.style.border = '3px solid red';
+        borderCheckBox.style.border = '2px solid red';
         console.log("array = 0");
     } else {
         mixArray(resultArray);
