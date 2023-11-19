@@ -405,8 +405,22 @@ let resultArray = []; // додаємо сюди обрані частини
 const prepositions = ["aus", "bei", "mit", "nach", "von", "zu", "für", "gegen", "um", "an", "auf", "in", "über", "unter", "vor", "zwischen"];
 let variantPrapositionArray; // формується в залежності від кількості препозиції
 
-const btnMakeArray = document.querySelector('.makeArray');
-btnMakeArray.addEventListener('click', generateArray);
+let game;
+const btnMakeArray = document.querySelector('.play');
+btnMakeArray.addEventListener('click', ()=>{
+  game = 'play';
+  generateArray();
+  btnBack.style.display = 'block';
+  play();
+});
+
+const btnLern = document.querySelector('.lern');
+btnLern.addEventListener('click', ()=>{
+  game = 'lern';
+  generateArray();
+  btnBack.style.display = 'block';
+  displayNewVerbLern();
+})
 
 const prepositionsChois = document.querySelector('.prepositionsChois');
 const verbElement = document.getElementById('verb');
@@ -474,11 +488,17 @@ function ubdatePrepositionenCheckButton() {
 // };
 
 
-next.addEventListener('click', play);
+next.addEventListener('click', ()=>{
+  if (game === 'plat')  {
+    play();
+  } else {
+    displayNewVerbLern();
+  }
+});
 
 
 function play(){
-  btnBack.style.display = 'block';
+  // btnBack.style.display = 'block';
   displayNewVerb();
   resultElement.textContent = '';
   let stopClick = false;
@@ -521,8 +541,9 @@ function play(){
   };
 
 };
-
+const textWork = document.getElementById('textWork');
 function displayNewVerb() {
+    textWork.textContent = "Оберіть правильний прийменник";
     if (currentVerbIndex < resultArray.length) {
         const currentVerb = resultArray[currentVerbIndex];
         verbElement.textContent = `${currentVerb.verb}`;
@@ -541,6 +562,36 @@ function displayNewVerb() {
         next.style.display = 'none';
         newGame.style.display = 'block'
         resultElement.textContent = 'Гра завершена. Дякуємо за гру!';
+    };
+};
+
+const useMitText = document.getElementById('useMitText');
+const useMitKasus = document.getElementById('useMitKasus');
+
+function displayNewVerbLern() {
+    useMitText.style.display = 'block';
+    textWork.textContent = "Вчимо";
+
+    if (currentVerbIndex < resultArray.length) {
+        const currentVerb = resultArray[currentVerbIndex];
+        let kasusFull;
+        if (currentVerb.kasus === "akk") {
+          kasusFull = "Akkusativ";
+        } else {
+          kasusFull = "Dativ";
+        };
+        verbElement.textContent = `${currentVerb.verb} ${currentVerb.prep}`;
+        // useMitText.textContent = "Використовується з: ";
+        useMitKasus.textContent = kasusFull;
+        translate.textContent = `${currentVerb.ubersetz}`;
+        // запускаємо формування радіокнопо
+        // varianteAntwort(prepositions, currentVerb.prep, quantityAnsver );
+        // createButton(variantPrapositionArray);
+        //console.log(prepositions, currentVerb.prep, quantityAnsvers, variantPrapositionArray);
+        currentVerbIndex++;
+    } else {
+        // Якщо всі глаголи використано
+        verbElement.textContent = 'Гра закінчена';
     };
 };
 
@@ -638,7 +689,7 @@ function generateArray() {
         prepositionsChois.style.display = 'none';
         boxAnswer.style.display = 'block';
         quantityAnsver = quantityAnsvers;
-        play();
+        // play();
     }
 };
 

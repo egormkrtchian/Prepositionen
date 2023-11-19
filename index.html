@@ -157,7 +157,8 @@
             </div>
        </div>
        <div class="box_center">
-         <button class="makeArray">сформувати</button>
+         <button class="lern">вчити</button>
+         <button class="play">грати</button>
        </div>
 
 
@@ -165,8 +166,13 @@
 
     <div class="boxAnswer displayNone">
       <div class="questions_box">
-        <h3>Оберіть правильний прийменник</h3>
+        <h3 id="textWork"></h3>
         <p>Дієслово: <span id="verb" class="bold"></p>
+        <!-- <div class="displayFlex">
+          <p id="useMitText"></p>
+          <p><span id="useMitKasus" class="bold"></p>
+        </div> -->
+        <p id="useMitText">Використовується з: <span id="useMitKasus"  class="bold"></p>
         <p>Переклад: <span id="translate" class="bold"></p>
       </div>
       <!-- <form id="prepositionForm">
@@ -185,7 +191,7 @@
 
       </div>
       <div class="box_center">
-        <button type="button" id="next" class="button button_next">наступний</button>
+        <button type="button" id="next" class="button button_next">наступне</button>
       </div>
 
 
