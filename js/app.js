@@ -489,7 +489,7 @@ function ubdatePrepositionenCheckButton() {
 
 
 next.addEventListener('click', ()=>{
-  if (game === 'plat')  {
+  if (game === 'play')  {
     play();
   } else {
     displayNewVerbLern();
@@ -591,6 +591,7 @@ function displayNewVerbLern() {
         currentVerbIndex++;
     } else {
         // Якщо всі глаголи використано
+
         verbElement.textContent = 'Гра закінчена';
     };
 };
